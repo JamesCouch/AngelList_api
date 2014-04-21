@@ -1,0 +1,63 @@
+<div class="container" id="mainContainer">
+	<div class="row text-center">
+		<h3>Search for Startups</h3>
+		<%= render 'layouts/form' %>
+	</div>
+	<hr>
+	
+	<div class="container-fluid">
+
+		<div id='list_group'>
+			<div class="result_header row">
+		    	<div class="span1"><img class="result_image" src='<%= @response["logo_url"] %>'></img></div>
+		    	<div class="result_name span3"><%= @response["name"] %>
+		    		<div class="subtext"><%= @response["high_concept"]%></div>
+		    	</div>
+
+		    	<div class="span4">
+		    		<div class="well">
+		    			<ul>
+		    			<li>Size: <%= @response["company_size"]%> employees</li>
+		    			<li>Followers: <%= @response["follower_count"] %></li>
+		    			<li>AngelList URL: <a href="<%= @response["angellist_url"]%>"><%= @response["angellist_url"]%></li>
+		    			</ul>
+		    		</div>
+
+		    	</div>
+			</div>
+
+			<div class="result_header_about row text-center">
+				<div class="span1"><a href="<%= @response["locations"][0]["display_name"]%>"><%= @response["locations"][0]["display_name"] %></a></div>
+				<div class="span1"><a href="<%= @response["markets"][0]["angellist_url"] %>"><%= @response["markets"][0]["display_name"] %></a></div>
+				<div class="span1"><a href="<%= @response["markets"][1]["angellist_url"] %>"><%= @response["markets"][1]["display_name"] %></a></div>
+			</div>
+
+
+			<div class="result_body_about">
+				<div class="row-fluid">
+					<h3>About <%= @response["name"] %>
+					<hr>
+					<div class="span5"><h4><%= @response["product_desc"] %></div>
+					<div class="span5"><img src="http://maps.googleapis.com/maps/api/staticmap?center=<%= @response["locations"][0]["display_name"] %>&zoom=12&size=300x150&sensor=false"></img></div>
+				</div>
+			</div>
+
+			<div class="result_body_images">
+
+				<div class="row-fluid">
+					<div class="span3">
+						<a class="gallery" href="<%= @response["screenshots"][0]["original"] %>"><img class="img_tile" src='<%= @response["screenshots"][0]["thumb"] %>'></img></a>
+					</div>
+
+					<div class="span3">
+						<a class="gallery" href='<%= @response["screenshots"][1]["original"] %>'><img class="img_tile" src='<%= @response["screenshots"][1]["thumb"] %>'></img></a>
+					</div>
+
+					<div class="span3">
+						<a class="gallery" href='<%= @response["screenshots"][2]["original"] %>'><img class="img_tile" src='<%= @response["screenshots"][2]["thumb"] %>'></img></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
