@@ -12,6 +12,8 @@ gem 'rails_12factor', group: :production
 
 gem 'pg'
 
+gem 'sqlite3', group: :development
+
 # gem 'bootstrap-sass'
 
 gem "twitter-bootstrap-rails"
