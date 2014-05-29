@@ -40,11 +40,7 @@ var Search = {
 		var desc2 = (typeof(data.markets[1]) != "undefined") ? data.markets[1].display_name : "";
 		var desc2_link = (typeof(data.markets[1]) != "undefined") ? data.markets[1].angellist_url : "";
 		var img1_orig = (typeof(data.screenshots[0]) != "undefined") ? data.screenshots[0].original : "";
-		var img2_orig = (typeof(data.screenshots[1]) != "undefined") ? data.screenshots[1].original : "";
-		var img3_orig = (typeof(data.screenshots[2]) != "undefined") ? data.screenshots[2].original : "";
 		var img1_thumb = (typeof(data.screenshots[0]) != "undefined") ? data.screenshots[0].thumb : "";
-		var img2_thumb = (typeof(data.screenshots[1]) != "undefined") ? data.screenshots[1].thumb : "";
-		var img3_thumb = (typeof(data.screenshots[2]) != "undefined") ? data.screenshots[2].thumb : "";
 
 		var html = "<div id='list_group'>";
 			html += '<div class="result_header row">'
@@ -84,14 +80,6 @@ var Search = {
 				html += '<div class="row">'
 					html += '<div class="span3">'
 						html += '<a class="gallery" href='+img1_orig+'><img class="img_tile" src='+img1_thumb+'></img></a>'
-					html += '</div>'
-
-					html += '<div class="span3">'
-						html += '<a class="gallery" href='+img2_orig+'><img class="img_tile" src='+img2_thumb+'></img></a>'
-					html += '</div>'
-
-					html += '<div class="span3">'
-						html += '<a class="gallery" href='+img3_orig+'><img class="img_tile" src='+img3_thumb+'></img></a>'
 					html += '</div>'
 				html += '</div>'
 			html += '</div>'
